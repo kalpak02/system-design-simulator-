@@ -9,13 +9,6 @@ import {
   Scale,
   AlertTriangle,
   CheckCircle2,
-  TrendingUp,
-  Cpu,
-  Zap,
-  ArrowRight,
-  Database,
-  Server,
-  Layers,
   Sparkles,
 } from 'lucide-react'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'

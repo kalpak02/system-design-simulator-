@@ -71,14 +71,16 @@ export function Canvas() {
 
   // reject self-loops and duplicate edges
   const isValidConnection = useCallback(
-    (connection: Connection): boolean => {
-      // no self-loops
+    (connection: Connection | Edge): boolean => {
+      if (!connection.source || !connection.target) return false
+
       if (connection.source === connection.target) return false
-      // no duplicate edges between the same source → target
+
       const currentEdges = useSimStore.getState().edges
       const duplicate = currentEdges.some(
         (e) => e.source === connection.source && e.target === connection.target
       )
+
       return !duplicate
     },
     []
